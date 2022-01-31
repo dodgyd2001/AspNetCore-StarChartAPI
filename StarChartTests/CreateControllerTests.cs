@@ -15,12 +15,12 @@ namespace StarChartTests
         [Fact(DisplayName = "Create Controller @create-controller")]
         public void CreateControllerTest()
         {
-            var filePath = ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
+            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
             var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
-            Assert.True(controller.BaseType == typeof(ControllerBase), "A `public` class `CelestialObjectController` was found, but is not inheriting the `ControllerBase` class.");
+            Assert.True(controller.BaseType == typeof(Controller), "A `public` class `CelestialObjectController` was found, but is not inheriting the `Controller` class.");
         }
 
         [Fact(DisplayName = "Add Attributes to Controller @add-attributes-to-controller")]
