@@ -9,6 +9,10 @@ namespace StarChart.Models
 {
     public class CelestialObject
     {
+        public CelestialObject()
+        {
+            Satellites = new List<CelestialObject>();
+        }
         public int Id { get; set; }
 
        [Required(ErrorMessage = "Name is Required")]
